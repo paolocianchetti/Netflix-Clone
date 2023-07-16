@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap v.5.0 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+	<!-- My CSS -->
+	<link rel="stylesheet" href="style.css">
+
+	<title>Netflix Clone</title>
+</head>
+
+<body>
+	<!-- netflix navbar -->
+    <nav class="navbar navbar-expand-lg netflix-navbar netflix-padding-left netflix-padding-right">
+        <div class="container-fluid">
+			<div class="netflix-row">
+				<section class="left d-flex align-items-center">
+					<a class="navbar-brand" href="#">
+						<img src="./assets/imgs/Netflix_Logo_RGB.png" alt="">
+					</a>
+					<!-- dropdown -->
+					<div class="netflix-dropdown-box dropdown">
+						<button class="netflix-dropdown btn btn-secondary dropdown-toggle" type="button" id="netflixNavbarDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+							<i id="hamburger" class="bi bi-list"></i>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="netflixNavbarDropdownMenu">
+						  <li><a class="dropdown-item" href="#">Home</a></li>
+						  <li><a class="dropdown-item" href="#">TV Shows</a></li>
+						  <li><a class="dropdown-item" href="#">Movies</a></li>
+						  <li><a class="dropdown-item" href="#">Recently Added</a></li>
+						  <li><a class="dropdown-item" href="#">My List</a></li>
+						</ul>
+					</div>
+					<!-- tabs -->
+					<div class="netflix-nav">
+						<section>
+							<button>Home</button>
+							<button class="text-light">TV Shows</button>
+							<button>Movies</button>
+							<button>Recently Added</button>
+							<button>My List</button>
+						</section>
+					</div>
+				</section>
+				<section class="right d-flex align-items-center">
+					<i class="bi bi-search"></i>
+					<a id="kids" href="#">KIDS</a>
+					<i class="bi bi-bell-fill"></i>
+					<!-- profile dropdown -->
+					<div class="netflix-profile-dropdown dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+						  <i class="bi bi-person-square netflix-profile"></i>
+						</button>
+						<div class="dropdown-menu" aria-label="profileDropdownMenu">
+							<div class="d-flex justify-content-center align-items-center">
+								<i class="bi bi-person-circle"></i>
+                            	<div class="d-flex flex-column justify-content-center align-content-center px-3 pb-1 gap">
+                                	<h6 class="mb-0">My Profile</h6>
+                                	<p class="mb-0 text-muted">myprofile@netflix.com</p>
+                            	</div>
+							</div>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+								<i class="bi bi-person"></i>
+                                <span>Profile</span>
+							</a>
+                            <a class="dropdown-item" href="#">
+								<i class="bi bi-star"></i>
+                                <span>Subscription</span>
+							</a>
+                            <a class="dropdown-item" href="#">
+								<i class="bi bi-gear"></i>
+                                <span>Settings</span>
+							</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">
+								<i class="bi bi-power"></i>
+                                <span>Sign Out</span>
+							</a>
+                        </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</nav>
+
+	<!-- TV Shows -->
+	<section id="TvShows" class="text-light">
+        <div class="d-flex w-100 justify-content-between">
+			<div class="d-flex w-50 justify-content-start">
+				<h2>TV Shows</h2>
+          		<div class="netflix-tvshows dropdown">
+            		<button class="btn text-light border-light dropdown-toggle" type="button" id="tvshowsDropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+              			Genres
+            		</button>
+            		<div class="dropdown-menu bg-dark border-light" aria-label="tvshowsDropdownMenu">
+              			<a class="dropdown-item text-light" href="#">Action</a>
+              			<a class="dropdown-item text-light" href="#">Crime</a>
+              			<a class="dropdown-item text-light" href="#">Drama</a>
+						<a class="dropdown-item text-light" href="#">Comedy</a>
+						<a class="dropdown-item text-light" href="#">Horror</a>
+						<a class="dropdown-item text-light" href="#">Fantasy</a>
+						<a class="dropdown-item text-light" href="#">Scince Fiction</a>
+            		</div>
+        		</div>
+			</div>
+		  	<div class="d-flex">
+				<i class="bi bi-filter-left"></i>
+				<i class="bi bi-grid-fill"></i>
+			</div>
+        </div>
+	</section>
+
+	<!-- Video -->
+	<div id="Video">
+		<section class="netflix-home-video">
+			<video src="./assets/video/trailer.mp4" autoplay muted loop></video>
+		</section>
+	</div>
+
+	<!-- carousel n.1 -->
+	<div class="slider-box-1">
+		<section class="container-fluid">
+			<div class="d-flex justify-content-between">
+				<p class="text-white"> <b> Trending Now </b></p>
+				<div>
+					<button type="button" data-bs-target="#trendingNowCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#trendingNowCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#trendingNowCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+			</div>
+			<div id="trendingNowCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner position-relative overflow-visible">
+					<!-- slide n.1 -->
+					<div class="carousel-item active">
+						<section class="d-flex" style="position: absolute;">
+							<!-- card n.1 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/1.png" class="card-img-top" alt="unorthodox image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 96% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.2 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/2.png" class="card-img-top" alt="after life image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 71% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia nera • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.3 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/3.png" class="card-img-top" alt="vis a vis image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 82% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Thriller • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.4 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/4.png" class="card-img-top" alt="the place image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 90% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Noir • Fantastico</p>
+								</div>
+							</div>
+							<!-- card n.5 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/5.png" class="card-img-top" alt="summertime image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 61% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Dramma adolescenziale</p>
+								</div>
+							</div>
+							<!-- card n.6 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/6.png" class="card-img-top" alt="delitti di valhalla image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 75% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Thriller</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<!-- slide n.2 -->
+					<div class="carousel-item">
+						<section class="d-flex position-absolute">
+							<!-- card n.7 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/7.png" class="card-img-top" alt="l'altra grace image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 80% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV crime</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.8 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/8.png" class="card-img-top" alt="virgin river image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 74% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Sentimentale</p>
+								</div>
+							</div>
+							<!-- card n.9 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/9.png" class="card-img-top" alt="the english game image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 53% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Storico • Sportivo</p>
+								</div>
+							</div>
+							<!-- card n.10 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/10.png" class="card-img-top" alt="metodo kominsky image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 93% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia</p>
+								</div>
+							</div>
+							<!-- card n.11 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/11.png" class="card-img-top" alt="patto d'amore image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 67% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Sentimentale</p>
+								</div>
+							</div>
+							<!-- card n.12 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/12.png" class="card-img-top" alt="la casa de las flores image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 76% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia drammatica</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<!-- slide n.3 -->
+					<div class="carousel-item">
+						<section class="d-flex position-absolute">
+							<!-- card n.13 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/13.png" class="card-img-top" alt="collateral beauty image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 13% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Fantastico</p>
+								</div>
+							</div>
+							<!-- card n.14 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/14.png" class="card-img-top" alt="self-made image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 68% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Biografico</p>
+								</div>
+							</div>
+							<!-- card n.15 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/15.png" class="card-img-top" alt="freud image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 50% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Giallo • Thriller • Poliziesco</p>
+								</div>
+							</div>
+							<!-- card n.16 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/16.png" class="card-img-top" alt="grace and frankie image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 90% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia</p>
+								</div>
+							</div>
+							<!-- card n.17 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/17.png" class="card-img-top" alt="lasciati andare image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 20% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia • Thriller • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.18 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/18.png" class="card-img-top" alt="dogman image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 84% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- carousel n.2 -->
+	<div class="slider-box-2">
+		<section class="container-fluid">
+			<div class="d-flex justify-content-between">
+				<p class="text-white"> <b> Watch It Again </b></p>
+				<div>
+					<button type="button" data-bs-target="#watchItAgainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#watchItAgainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#watchItAgainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+			</div>
+			<div id="watchItAgainCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner position-relative overflow-visible">
+					<!-- slide n.1 -->
+					<div class="carousel-item active">
+						<section class="d-flex position-absolute">
+							<!-- card n.1 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/1.png" class="card-img-top" alt="unorthodox image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 96% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.2 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/2.png" class="card-img-top" alt="after life image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 71% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia nera • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.3 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/3.png" class="card-img-top" alt="vis a vis image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 82% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Thriller • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.4 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/4.png" class="card-img-top" alt="the place image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 90% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Noir • Fantastico</p>
+								</div>
+							</div>
+							<!-- card n.5 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/5.png" class="card-img-top" alt="summertime image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 61% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Dramma adolescenziale</p>
+								</div>
+							</div>
+							<!-- card n.6 -->
+							<div class="card" >
+								<img src="./assets/imgs/movies/6.png" class="card-img-top" alt="delitti di valhalla image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 75% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Thriller</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<!-- slide n.2 -->
+					<div class="carousel-item">
+						<section class="d-flex position-absolute">
+							<!-- card n.7 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/7.png" class="card-img-top" alt="l'altra grace image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 80% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV crime</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.8 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/8.png" class="card-img-top" alt="virgin river image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 74% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Sentimentale</p>
+								</div>
+							</div>
+							<!-- card n.9 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/9.png" class="card-img-top" alt="the english game image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 53% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Storico • Sportivo</p>
+								</div>
+							</div>
+							<!-- card n.10 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/10.png" class="card-img-top" alt="metodo kominsky image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 93% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia</p>
+								</div>
+							</div>
+							<!-- card n.11 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/11.png" class="card-img-top" alt="patto d'amore image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 67% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Sentimentale</p>
+								</div>
+							</div>
+							<!-- card n.12 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/12.png" class="card-img-top" alt="la casa de las flores image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 76% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia drammatica</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<!-- slide n.3 -->
+					<div class="carousel-item">
+						<section class="d-flex position-absolute">
+							<!-- card n.13 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/13.png" class="card-img-top" alt="collateral beauty image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 13% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Fantastico</p>
+								</div>
+							</div>
+							<!-- card n.14 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/14.png" class="card-img-top" alt="self-made image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 68% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Biografico</p>
+								</div>
+							</div>
+							<!-- card n.15 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/15.png" class="card-img-top" alt="freud image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 50% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Giallo • Thriller • Poliziesco</p>
+								</div>
+							</div>
+							<!-- card n.16 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/16.png" class="card-img-top" alt="grace and frankie image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 90% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia</p>
+								</div>
+							</div>
+							<!-- card n.17 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/17.png" class="card-img-top" alt="lasciati andare image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 20% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia • Thriller • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.18 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/18.png" class="card-img-top" alt="dogman image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 84% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- carousel n.3 -->
+	<div class="slider-box-3">
+		<section class="container-fluid">
+			<div class="d-flex justify-content-between">
+				<p class="text-white"> <b> New Releases </b></p>
+				<div>
+					<button type="button" data-bs-target="#newReleasesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#newReleasesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#newReleasesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+			</div>
+			<div id="newReleasesCarousel" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner position-relative overflow-visible">
+					<!-- slide n.1 -->
+					<div class="carousel-item active">
+						<section class="d-flex position-absolute">
+							<!-- card n.1 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/1.png" class="card-img-top" alt="unorthodox image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 96% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.2 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/2.png" class="card-img-top" alt="after life image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 71% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia nera • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.3 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/3.png" class="card-img-top" alt="vis a vis image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 82% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Thriller • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.4 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/4.png" class="card-img-top" alt="the place image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 90% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Noir • Fantastico</p>
+								</div>
+							</div>
+							<!-- card n.5 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/5.png" class="card-img-top" alt="summertime image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 61% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Dramma adolescenziale</p>
+								</div>
+							</div>
+							<!-- card n.6-->
+							<div class="card">
+								<img src="./assets/imgs/movies/6.png" class="card-img-top" alt="delitti di valhalla image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 75% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Thriller</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<!-- slide n.2 -->
+					<div class="carousel-item">
+						<section class="d-flex position-absolute">
+							<!-- card n.7 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/7.png" class="card-img-top" alt="l'altra grace image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 80% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV scrime</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.8 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/8.png" class="card-img-top" alt="virgin river image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 74% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Sentimentale</p>
+								</div>
+							</div>
+							<!-- card n.9 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/9.png" class="card-img-top" alt="the english game image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 53% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Storico • Sportivo</p>
+								</div>
+							</div>
+							<!-- card n.10 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/10.png" class="card-img-top" alt="metodo kominsky image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 93% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia</p>
+								</div>
+							</div>
+							<!-- card n.11 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/11.png" class="card-img-top" alt="patto d'amore image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 67% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Sentimentale</p>
+								</div>
+							</div>
+							<!-- card n.12 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/12.png" class="card-img-top" alt="la casa de las flores image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 76% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia drammatica</p>
+								</div>
+							</div>
+						</section>
+					</div>
+					<!-- slide n.3 -->
+					<div class="carousel-item">
+						<section class="d-flex position-absolute">
+							<!-- card n.13 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/13.png" class="card-img-top" alt="collateral beauty image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 13% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Fantastico</p>
+								</div>
+							</div>
+							<!-- card n.14 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/14.png" class="card-img-top" alt="self-made image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 68% match </p>
+										<span class="netflix-card-text m-2 text-white">Miniserie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico • Biografico</p>
+								</div>
+							</div>
+							<!-- card n.15 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/15.png" class="card-img-top" alt="freud image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 50% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Giallo • Thriller • Poliziesco</p>
+								</div>
+							</div>
+							<!-- card n.16 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/16.png" class="card-img-top" alt="grace and frankie image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 90% match </p>
+										<span class="netflix-card-text m-2 text-white">Serie TV</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia</p>
+								</div>
+							</div>
+							<!-- card n.17 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/17.png" class="card-img-top" alt="lasciati andare image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 20% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">SD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Commedia • Thriller • Drammatico</p>
+								</div>
+							</div>
+							<!-- card n.18 -->
+							<div class="card">
+								<img src="./assets/imgs/movies/18.png" class="card-img-top" alt="dogman image">
+								<div class="card-body">
+									<section class="d-flex justify-content-between">
+										<div>
+											<i class="bi bi-play-circle-fill card-icon"></i>
+											<i class="bi bi-plus-circle card-icon"></i>
+										</div>
+										<div>
+											<i class="bi bi-arrow-down-circle-fill card-icon"></i>
+										</div>
+									</section>
+									<section class="d-flex justify-content-between align-items-center">
+										<p class="netflix-card-text m-0"> 84% match </p>
+										<span class="netflix-card-text m-2 text-white">Film</span>
+										<span class="netflix-card-text border text-white p-1">HD</span>
+									</section>
+									<p class="m-0 netflix-card-text text-white">Drammatico</p>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- footer -->
+	<footer>
+		<div class="container footer">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="icons-footer w-50 mx-2 mb-2 px-1 d-flex justify-content-start">
+						<i class="bi bi-facebook"></i>
+						<i class="bi bi-instagram"></i>
+						<i class="bi bi-twitter"></i>
+						<i class="bi bi-youtube"></i>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<ul>
+								<li>Audio and Subtitles</li>
+								<li>Media Center</li>
+								<li>Privacy</li>
+								<li>Contact us</li>
+							</ul>
+						</div>
+						<div class="col-md-3">
+							<ul>
+								<li>Audio Description</li>
+								<li>Investor Relations</li>
+								<li>Legal Notices</li>
+							</ul>
+						</div>
+						<div class="col-md-3">
+							<ul>
+								<li>Help Center</li>
+								<li>Jobs</li>
+								<li>Cookie Preferences</li>
+							</ul>
+						</div>
+						<div class="col-md-3">
+							<ul>
+								<li>Gift Cards</li>
+								<li>Terms of Use</li>
+								<li>Corporate Information</li>
+							</ul>
+						</div>
+						<div class="col-12">
+							<button type="button" class="btn btn-outline-dark btn-sm nflix-btn-code">Service Code</button>
+						</div>
+						<div class="col-12">
+							<p class="copyright mt-3 mx-4 px-2">(c) 1997 - 2023 Netflix, Inc.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>

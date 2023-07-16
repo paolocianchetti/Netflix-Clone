@@ -1,0 +1,479 @@
+body {
+    background-color: rgb(20, 20, 20);
+    overflow-x: hidden;
+    position: relative;
+}
+
+i {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    padding: 5px 20px;
+}
+
+.netflix-navbar {
+    background: rgb(12, 12, 12);
+    position: fixed;
+    width: 100vw;
+    z-index: 50;
+}
+
+.netflix-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.netflix-paddind-left {
+    padding-left: 57px;
+}
+
+.netflix-padding-right {
+    padding-right: 57px;
+}
+
+.netflix-dropdown-box {
+    display: none;
+}
+
+.netflix-dropdown {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    font-size: 9px;
+}
+
+.netflix-dropdown-box .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.796);
+    font-size: 9px !important;
+    color: rgb(255, 255, 255) !important;
+    margin-left: -80px;
+    border-top: 3px solid rgb(255, 255, 255);
+    margin-top: 20px;
+}
+
+.netflix-dropdown-box .dropdown-menu .dropdown-item {
+    color: rgba(255, 255, 255, 0.769);
+    text-align: center;
+    width: 250px;
+    font-size: 15px;
+    padding: 10px 20px;
+}
+
+.netflix-dropdown-box .dropdown-menu .dropdown-item:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.111);
+}
+
+.netflix-nav {
+    display: block;
+}
+
+.netflix-nav button {
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.619);
+    border: none;
+    font-size: 13px;
+}
+
+.netflix-nav button:hover {
+    color: rgb(255, 255, 255);
+}
+
+i.bi-search:hover, i.bi-bell-fill:hover {
+    cursor: pointer;
+}
+
+.right a#kids {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.right .dropdown-menu .gap {
+    gap: 6px;
+}
+
+.netflix-profile {
+    font-size: 24px;
+    color: rgb(0, 120, 0);
+    margin-left: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.netflix-profile-dropdown .btn {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.netflix-profile-dropdown .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.796);
+    font-size: 9px !important;
+    color: rgb(255, 255, 255) !important;
+    margin-left: -70px;
+    margin-top: 20px;
+    border-top: 1px solid rgb(255, 255, 255);
+}
+
+.netflix-profile-dropdown .dropdown-menu i {
+    font-size: 24px;
+    color: rgb(0, 120, 0);
+    padding: 0;
+}
+
+.netflix-profile-dropdown .dropdown-menu .dropdown-item {
+    color: rgba(255, 255, 255, 0.769);
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.netflix-profile-dropdown .dropdown-menu .dropdown-item i {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    padding-right: 5px;
+}
+
+.netflix-profile-dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.111);
+    color: rgb(255, 255, 255);
+}
+
+#TvShows {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    height: 48px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: rgb(20, 20, 20);
+    z-index: 20;
+}
+
+#TvShows h2 {
+    margin-right: 50px;
+}
+
+.netflix-tvshows .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.769);
+    color: rgb(255, 255, 255);
+}
+
+.netflix-tvshows .dropdown-menu .dropdown-item {
+    color: rgba(255, 255, 255, 0.769);
+}
+
+.netflix-tvshows .dropdown-menu .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.111);
+    color: rgb(255, 255, 255);
+}
+
+i.bi-filter-left, i.bi-grid-fill {
+    cursor: pointer;
+}
+
+.netflix-home-video {
+    position: relative;
+    top: 70px;
+    width: 100%;
+    z-index: 10;
+}
+
+.netflix-home-video video {
+    width: 100%;
+}
+
+.slider-box-1 {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 30;
+}
+
+.slider-box-2 {
+    position: absolute;
+    top: 130%;
+    width: 100%;
+    z-index: 20;
+}
+
+.slider-box-3 {
+    position: absolute;
+    top: 160%;
+    width: 100%;
+    z-index: 10;
+}
+
+.card {
+    width: 200px;
+    background: rgb(20, 20, 20);
+    border-radius: 4px;
+    transition: 0.2s linear;
+    margin: 3px;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.4);
+    z-index: 10;
+}
+
+.card-icon {
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    padding: 0px !important;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.netflix-card-text {
+    font-size: 12px;
+}
+
+p.netflix-card-text {
+    color: rgb(0, 186, 0);
+}
+
+.card-body {
+    display: none;
+    padding: 10px 15px;
+    position: absolute;
+    background-color: rgb(20, 20, 20);
+    top: 120px;
+    width: 100%;
+}
+
+.card:hover > .card-body {
+    display: block;
+}
+
+.icons-footer .bi {
+    color: rgba(128, 128, 128, 0.884);
+}
+
+.icons-footer .bi:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.footer {
+    position: absolute;
+    background-color: rgb(12, 12, 12);
+    top: 200%;
+    left: 10%;
+    width: 80%;
+}
+
+.footer ul {
+    list-style: none;
+    line-height: 28px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.646);
+    font-weight: 100;
+}
+
+.footer ul li:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.nflix-btn-code {
+    border-radius: 0%;
+    font-size: 11px;
+    color: rgba(211, 211, 211, 0.63);
+    margin-left: 30px;
+}
+
+.copyright {
+    font-size: 9px;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+}
+
+/* Sezione CSS Responsive */
+
+@media (max-width: 792px) {
+    .navbar-brand img {
+        width: 43px !important;
+    }
+    .netflix-paddind-left {
+        padding-left: 10px !important;
+    }
+    .netflix-padding-right {
+        padding-right: 10px !important;
+    }
+    .netflix-dropdown-box {
+        display: block !important;
+    }
+    .netflix-nav {
+        display: none;
+    }
+    i {
+        font-size: 12px;
+        cursor: pointer;
+        padding: 5px !important;
+    }
+    i#hamburger {
+        font-size: 16px;
+    }
+    .right a#kids {
+        font-size: 9px !important;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+    .netflix-profile {
+        margin-left: 5px !important;
+        padding: 0 !important;
+        font-size: 18px;
+    }
+    .netflix-profile-dropdown .dropdown-menu {
+        margin-left: -120px;
+        margin-top: 20px;
+    }
+    .netflix-profile-dropdown .dropdown-menu h6 {
+        font-size: 12px;
+    }
+    .netflix-profile-dropdown .dropdown-menu i {
+        font-size: 18px;
+    }
+    .netflix-profile-dropdown .dropdown-menu .dropdown-item {
+        font-size: 12px;
+    }
+    .netflix-profile-dropdown .dropdown-menu .dropdown-item i {
+        font-size: 12px;
+    }
+    .netflix-tvshows button {
+        font-size: 11px;
+    }
+    .netflix-tvshows .dropdown-menu .dropdown-item {
+        font-size: 11px;
+    }
+    .card {
+        width: 150px;
+    }
+    .card-icon {
+        font-size: 17px !important;
+    }
+    .card-body {
+        top: 80px;
+    }
+    .netflix-card-text {
+        font-size: 8px;
+    }
+    .icons-footer {
+        margin-left: 22px !important;
+    }
+    .icons-footer .bi {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 414px) {
+    #TvShows h2 {
+        font-size: 14px;
+    }
+    .slider-box-1 {
+        top: 120%;
+    }
+    .slider-box-2 {
+        top: 190%;
+    }
+    .slider-box-3 {
+        top: 260%;
+    }
+    .footer {
+        top: 350%;
+    }
+}
+
+@media (min-width: 415px) and (max-width: 540px) {
+    #TvShows h2 {
+        font-size: 18px;
+    }
+    .slider-box-1 {
+        top: 120%;
+    }
+    .slider-box-2 {
+        top: 180%;
+    }
+    .slider-box-3 {
+        top: 240%;
+    }
+    .footer {
+        top: 300%;
+    }
+}
+
+@media (min-width: 541px) and (max-width: 666px) {
+    #TvShows h2 {
+        font-size: 20px;
+    }
+    .slider-box-1 {
+        top: 110%;
+    }
+    .slider-box-2 {
+        top: 160%;
+    }
+    .slider-box-3 {
+        top: 210%;
+    }
+    .footer {
+        top: 260%;
+    }
+}
+
+@media (min-width: 667px) and (max-width: 792px) {
+    #TvShows h2 {
+        font-size: 22px;
+    }
+    .slider-box-1 {
+        top: 110%;
+    }
+    .slider-box-2 {
+        top: 150%;
+    }
+    .slider-box-3 {
+        top: 190%;
+    }
+    .footer {
+        top: 240%;
+    }
+}
+
+@media (min-width: 793px) and (max-width: 918px) {
+    .slider-box-1 {
+        top: 105%;
+    }
+    .slider-box-2 {
+        top: 150%;
+    }
+    .slider-box-3 {
+        top: 195%;
+    }
+    .footer {
+        top: 250%;
+    }
+}
+
+@media (min-width: 919px) and (max-width: 1023px) {
+    .slider-box-1 {
+        top: 105%;
+    }
+    .slider-box-2 {
+        top: 150%;
+    }
+    .slider-box-3 {
+        top: 195%;
+    }
+    .footer {
+        top: 250%;
+    }
+}
